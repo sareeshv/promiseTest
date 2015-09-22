@@ -18,11 +18,11 @@
 	};
 
 	/**
-	 * Sample wait function1
-	 * The delay uses to show the concept
-	 * @param ms
-	 * @returns {*}
-	 */
+	* Sample wait function1
+	* The delay uses to show the concept
+	* @param ms
+	* @returns {*}
+	*/
 	function wait1(ms) {
 		var deferred = $.Deferred();
 		console.log('Executing wait1(100)');
@@ -32,11 +32,11 @@
 	};
 
 	/**
-	 * Sample wait function2: to create a deferred function which resolves after the specified timeout
-	 * The delay uses to show the concept
-	 * @param ms
-	 * @returns {*}
-	 */
+	* Sample wait function2: to create a deferred function which resolves after the specified timeout
+	* The delay uses to show the concept
+	* @param ms
+	* @returns {*}
+	*/
 	function wait2(ms) {
 		var deferred = $.Deferred();
 		console.log('Executing wait2 after(100)');
@@ -57,10 +57,24 @@
 		console.log('Is executing after 1500ms');
 	});
 
+	//Usage 3
 	//To show more than one function can be used together and will get executed after both are resolved.
 	$.when(wait1(100), wait2(100)).done(function(){
 		//Will be executed after the two promises are resolved
 		console.log('Executing the promise after the 200ms. After the two promises are resolved');
 		console.log('after the wait using multiple promises');
-	})
+	});
+
+	//Usage 4
+
+	var SampleWaitObject = {
+		ready: $.Deferred()
+	};
+
+	SampleWaitObject.ready = wait(2000);
+
+	SampleWaitObject.ready.done(function(){
+		console.log('Executing the promise after the 200ms. After the promises are wait promise is resolved ');
+	});
+
 })();
