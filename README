@@ -1,3 +1,13 @@
 This is to show how to use the promises.
 What promises are and how they behave
 Please refer the below link for more details: http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt2-practical-use
+
+
+Steps to use this repository:
+
+1. clone this to your desktop
+2. cd into this directory
+3. run> bower install
+4. open the index.html
+
+Go though the console and understand the flow. Used the setTimeOut() to add some delay for each promises.
